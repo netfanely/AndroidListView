@@ -63,32 +63,7 @@ public class MainActivity extends AppCompatActivity {
             dados.add("Bahia");
         return dados;
     }
-    public class Time implements Serializable{
-        int number;
-        String equipo;
-
-        public Time(int number, String equipo) {
-            this.number = 0;
-            this.equipo = "";
-        }
-
-        public int getNumber() {
-            return number;
-        }
-
-        public void setNumber(int number) {
-            this.number = number;
-        }
-
-        public String getEquipo() {
-            return equipo;
-        }
-
-        public void setEquipo(String equipo) {
-            this.equipo = equipo;
-        }
-
-    }
+   
 
 }
 
