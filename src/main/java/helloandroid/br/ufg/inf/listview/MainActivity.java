@@ -32,6 +32,21 @@ public class MainActivity extends AppCompatActivity {
                    Toast.makeText(getApplicationContext(),"voce clicou em:"+ equipes.get(position),Toast.LENGTH_LONG).show();
             }
         });
+         ArrayList times = new ArrayList();
+        times.add(new Pessoa(1,"Sao Paulo"));
+        times.add(new Pessoa(2,"Atletico Go"));
+
+        Intent it = new Intent(this, Tela2Activity.class);
+        it.putExtra("times", times);
+        it.putExtra("time", time.get(0));
+        startActivity(it);
+
+        Time time = (Time) getIntent().getSerializableExtra("time");
+        ArrayList times2 = (ArrayList)
+                getIntent().getSerializableExtra("times");
+        System.out.println("Times: "+ time.getNome());
+        System.out.println(
+                "Times: "+ times.get(0).getNome());
     }
     private ArrayList<String> prencheDados(){
         //la lista pronta
@@ -48,5 +63,32 @@ public class MainActivity extends AppCompatActivity {
             dados.add("Bahia");
         return dados;
     }
+    public class Time implements Serializable{
+        int number;
+        String equipo;
+
+        public Time(int number, String equipo) {
+            this.number = 0;
+            this.equipo = "";
+        }
+
+        public int getNumber() {
+            return number;
+        }
+
+        public void setNumber(int number) {
+            this.number = number;
+        }
+
+        public String getEquipo() {
+            return equipo;
+        }
+
+        public void setEquipo(String equipo) {
+            this.equipo = equipo;
+        }
+
+    }
+
 }
 
